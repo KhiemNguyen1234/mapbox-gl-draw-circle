@@ -1,12 +1,12 @@
-const MapboxDraw = require('@mapbox/mapbox-gl-draw');
-const createSupplementaryPoints = require('@mapbox/mapbox-gl-draw/src/lib/create_supplementary_points');
-const moveFeatures = require('@mapbox/mapbox-gl-draw/src/lib/move_features');
-const Constants = require('@mapbox/mapbox-gl-draw/src/constants');
-const constrainFeatureMovement = require('@mapbox/mapbox-gl-draw/src/lib/constrain_feature_movement');
-const distance = require('@turf/distance').default;
-const turfHelpers = require('@turf/helpers');
-const circle = require('@turf/circle').default;
-const createSupplementaryPointsForCircle = require('../utils/create_supplementary_points_circle');
+import MapboxDraw from '@mapbox/mapbox-gl-draw';
+import createSupplementaryPoints from '@mapbox/mapbox-gl-draw/src/lib/create_supplementary_points';
+import moveFeatures from '@mapbox/mapbox-gl-draw/src/lib/move_features';
+import Constants from '@mapbox/mapbox-gl-draw/src/constants';
+import constrainFeatureMovement from '@mapbox/mapbox-gl-draw/src/lib/constrain_feature_movement';
+import distance from '@turf/distance';
+import * as turfHelpers from '@turf/helpers';
+import circle from '@turf/circle';
+import createSupplementaryPointsForCircle from '../utils/create_supplementary_points_circle';
 
 
 const DirectModeOverride = MapboxDraw.modes.direct_select;
@@ -69,4 +69,4 @@ DirectModeOverride.toDisplayFeatures = function (state, geojson, push) {
 
 }
 
-module.exports = DirectModeOverride;
+export default DirectModeOverride;

@@ -1,8 +1,9 @@
-const MapboxDraw = require('@mapbox/mapbox-gl-draw');
-const createSupplementaryPoints = require('@mapbox/mapbox-gl-draw/src/lib/create_supplementary_points');
-const moveFeatures = require('@mapbox/mapbox-gl-draw/src/lib/move_features');
-const Constants = require('@mapbox/mapbox-gl-draw/src/constants');
-const createSupplementaryPointsForCircle = require('../utils/create_supplementary_points_circle');
+import MapboxDraw from '@mapbox/mapbox-gl-draw';
+import createSupplementaryPoints from '@mapbox/mapbox-gl-draw/src/lib/create_supplementary_points';
+import moveFeatures from '@mapbox/mapbox-gl-draw/src/lib/move_features';
+import Constants from '@mapbox/mapbox-gl-draw/src/constants';
+import createSupplementaryPointsForCircle from '../utils/create_supplementary_points_circle';
+
 
 
 const SimpleSelectModeOverride = MapboxDraw.modes.simple_select;
@@ -42,4 +43,4 @@ SimpleSelectModeOverride.toDisplayFeatures = function(state, geojson, display) {
     supplementaryPoints.forEach(display);
 };
   
-module.exports = SimpleSelectModeOverride;
+export default SimpleSelectModeOverride;
